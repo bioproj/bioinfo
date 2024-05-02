@@ -5,3 +5,4 @@ testData/
 run-info/
 logs/
 *.zip
+!*/testData
