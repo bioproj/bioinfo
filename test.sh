@@ -1,0 +1,1 @@
+git@gitee.com:bioinfoFungi/testData.git
