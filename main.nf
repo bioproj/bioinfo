@@ -51,7 +51,7 @@ process FASTQC {
     // def memory_in_mb = MemoryUnit.of("${task.memory}").toUnit('MB')
     // FastQC memory value allowed range (100 - 10000)
     // def fastqc_memory = memory_in_mb > 10000 ? 10000 : (memory_in_mb < 100 ? 100 : memory_in_mb)
-
+    def fastqc_memory = 1024
     """
     printf "%s %s\\n" $rename_to | while read old_name new_name; do
         [ -f "\${new_name}" ] || ln -s \$old_name \$new_name
@@ -60,6 +60,7 @@ process FASTQC {
     fastqc \\
         $args \\
         --threads $task.cpus \\
+        --memory $fastqc_memory \\
         $renamed_files
 
     cat <<-END_VERSIONS > versions.yml
@@ -82,6 +83,6 @@ process FASTQC {
 }
 workflow {
     FASTQC([[id:"SRR493366"], ["/home/wy/workspace/transcriptomics/testData/RNA-seq/reads/HBR_Rep1_ERCC-Mix2_Build37-ErccTranscripts-chr22.read1.fastq.gz","/home/wy/workspace/transcriptomics/testData/RNA-seq/reads/HBR_Rep1_ERCC-Mix2_Build37-ErccTranscripts-chr22.read2.fastq.gz"]])
-    splitLetters | flatten | convertToUpper | view { it.trim() }
+    // splitLetters | flatten | convertToUpper | view { it.trim() }
 }
 
