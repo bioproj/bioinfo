@@ -81,8 +81,30 @@ process FASTQC {
     END_VERSIONS
     """
 }
+
+if (!params.input) {
+    exit 1, '请输入fastq路径参数,例如(/my/data/SRR*_{1,2}.fastq)!' 
+} 
+// input = params.input
+// if(!params.input.startsWith("/")){
+//     params.input="${projectDir}/${params.input}"
+// }
+println "##############################"
+println "fastq路径参数:"+params.input
+println "##############################"
+
+
 workflow {
-    FASTQC([[id:"SRR493366"], ["/home/wy/workspace/transcriptomics/testData/RNA-seq/reads/HBR_Rep1_ERCC-Mix2_Build37-ErccTranscripts-chr22.read1.fastq.gz","/home/wy/workspace/transcriptomics/testData/RNA-seq/reads/HBR_Rep1_ERCC-Mix2_Build37-ErccTranscripts-chr22.read2.fastq.gz"]])
+    ch_input = channel.fromFilePairs(params.input)
+    // [SRR493366, [/my/data/SRR493366_1.fastq, /my/data/SRR493366_2.fastq]]
+    // [[id:"SRR493366"], ["/home/wy/workspace/transcriptomics/testData/RNA-seq/reads/HBR_Rep1_ERCC-Mix2_Build37-ErccTranscripts-chr22.read1.fastq.gz","/home/wy/workspace/transcriptomics/testData/RNA-seq/reads/HBR_Rep1_ERCC-Mix2_Build37-ErccTranscripts-chr22.read2.fastq.gz"]]
+    ch_input.map {
+            meta, fastq ->
+                new_id = meta - ~/$params.cutStr/
+                [ [id: new_id], fastq ]
+    }.set{ch_input}
+    ch_input.view()
+    FASTQC(ch_input)
     // splitLetters | flatten | convertToUpper | view { it.trim() }
 }
 

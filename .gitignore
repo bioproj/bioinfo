@@ -4,3 +4,4 @@ work/
 testData/
 run-info/
 logs/
+*.zip
