@@ -353,7 +353,7 @@ process SALMON_COUNT_R {
     val control_group
 
     output:
-    path "count.tsv"
+    path "*"
 
     when:
     task.ext.when == null || task.ext.when
