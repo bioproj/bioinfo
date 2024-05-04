@@ -7,6 +7,7 @@ docker run --rm  -it \
     -w $PWD  \
     -v $PWD:$PWD  \
     -v /home/wy/workspace/transcriptomics:/home/wy/workspace/transcriptomics \
+    -v /home/wy/workspace/genomics:/home/wy/workspace/genomics \
     -e NXF_LOG_FILE=logs/.nextflow.log \
     -e NXF_USRMAP=$(id -u) \
     -e NXF_GROUPMAP=$(getent group docker | cut -d: -f3) \

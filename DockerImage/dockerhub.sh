@@ -8,3 +8,8 @@ docker tag biocontainers/salmon:v0.12.0ds1-1b1-deb_cv1 registry.cn-hangzhou.aliy
 docker push registry.cn-hangzhou.aliyuncs.com/wybioinfo/salmon:v0.12.0
 
 
+docker pull rocker/tidyverse
+docker tag rocker/tidyverse registry.cn-hangzhou.aliyuncs.com/wybioinfo/tidyverse:4.3_1.3.0
+docker push registry.cn-hangzhou.aliyuncs.com/wybioinfo/tidyverse:4.3_1.3.0
+
+registry.cn-hangzhou.aliyuncs.com/wybioinfo/sra-tools:3.1.0

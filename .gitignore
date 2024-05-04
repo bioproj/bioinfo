@@ -6,3 +6,8 @@ run-info/
 logs/
 *.zip
 !*/testData
+R_LIBS/
+.local/
+out/
+.config/
+version*
