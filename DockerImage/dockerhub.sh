@@ -8,8 +8,12 @@ docker tag biocontainers/salmon:v0.12.0ds1-1b1-deb_cv1 registry.cn-hangzhou.aliy
 docker push registry.cn-hangzhou.aliyuncs.com/wybioinfo/salmon:v0.12.0
 
 
-docker pull rocker/tidyverse
-docker tag rocker/tidyverse registry.cn-hangzhou.aliyuncs.com/wybioinfo/tidyverse:4.3_1.3.0
-docker push registry.cn-hangzhou.aliyuncs.com/wybioinfo/tidyverse:4.3_1.3.0
+docker pull nanozoo/fastp:0.23.1--9f2e255
+docker tag nanozoo/fastp:0.23.1--9f2e255 registry.cn-hangzhou.aliyuncs.com/wybioinfo/fastp:0.23.1
+docker push registry.cn-hangzhou.aliyuncs.com/wybioinfo/fastp:0.23.1
 
-registry.cn-hangzhou.aliyuncs.com/wybioinfo/sra-tools:3.1.0
+
+
+docker pull biocontainers/fastp:0.23.4--h5f740d0_0
+docker tag biocontainers/fastp:0.23.4--h5f740d0_0 registry.cn-hangzhou.aliyuncs.com/wybioinfo/fastp:0.23.4
+docker push registry.cn-hangzhou.aliyuncs.com/wybioinfo/tidyverse:4.3_1.3.0
