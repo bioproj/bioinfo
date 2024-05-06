@@ -7,4 +7,4 @@ docker run --rm  \
     -v $PWD:$PWD  \
     -v $PWD:/home/rstudio  \
     -p 8787:8787  \
-    registry.cn-hangzhou.aliyuncs.com/wybioinfo/tidyverse:4.4
+    registry.cn-hangzhou.aliyuncs.com/wybioinfo/mendelian-randomization-rstudio
