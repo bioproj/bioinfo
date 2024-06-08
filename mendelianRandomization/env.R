@@ -10,3 +10,8 @@ BiocManager::version()
 
 # remotes::install_github("MRCIEU/TwoSampleMR")
 remotes::install_git("https://gitee.com/bioproj/TwoSampleMR.git")
+
+install.packages("CMplot")
+
+
+git@github.com:wyy2017/Foxtail-millet-data-analysis.git

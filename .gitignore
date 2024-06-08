@@ -11,3 +11,4 @@ R_LIBS/
 out/
 .config/
 version*
+*.jpg
