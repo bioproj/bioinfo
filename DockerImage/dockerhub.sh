@@ -17,3 +17,14 @@ docker push registry.cn-hangzhou.aliyuncs.com/wybioinfo/fastp:0.23.1
 docker pull biocontainers/fastp:0.23.4--h5f740d0_0
 docker tag biocontainers/fastp:0.23.4--h5f740d0_0 registry.cn-hangzhou.aliyuncs.com/wybioinfo/fastp:0.23.4
 docker push registry.cn-hangzhou.aliyuncs.com/wybioinfo/tidyverse:4.3_1.3.0
+
+
+docker pull trinityrnaseq/trinityrnaseq
+docker tag trinityrnaseq/trinityrnaseq registry.cn-hangzhou.aliyuncs.com/wybioinfo/trinityrnaseq
+
+docker pull trinityrnaseq/trinotate
+docker tag trinityrnaseq/trinotate registry.cn-hangzhou.aliyuncs.com/wybioinfo/trinotate
+
+
+docker pull trinityrnaseq/transdecoder
+docker tag trinityrnaseq/transdecoder registry.cn-hangzhou.aliyuncs.com/wybioinfo/transdecoder
