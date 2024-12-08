@@ -5,7 +5,7 @@ import { defineConfig } from 'astro/config';
 export default defineConfig({
     build: {
         format: "file",
-        // assets: '_custom'
+        assets: 'assets'
     },
     base:"/transcriptomics",
     outDir: "../docs",
