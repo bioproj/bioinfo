@@ -8,5 +8,5 @@ export default defineConfig({
 
     },
     // base:"/output",
-    outDir: "../web",
+    outDir: "../docs",
 });
