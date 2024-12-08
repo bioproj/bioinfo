@@ -12,3 +12,6 @@ out/
 .config/
 version*
 *.jpg
+testData/
+testData/** 
+transcriptomics/testData

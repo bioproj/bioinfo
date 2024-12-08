@@ -366,7 +366,7 @@ process SALMON_COUNT_R {
     //    count.R  $gtf $quant_sf_dir $treatment_group $control_group
 
     output:
-    path  "count.tsv"
+    path  "*" 
     script:
     if(treatment_group && control_group){
     """
