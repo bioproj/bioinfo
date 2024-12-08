@@ -7,6 +7,6 @@ export default defineConfig({
         format: "file",
 
     },
-    base:"./",
+    base:"/transcriptomics",
     outDir: "../docs",
 });
