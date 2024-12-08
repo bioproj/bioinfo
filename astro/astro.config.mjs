@@ -7,6 +7,6 @@ export default defineConfig({
         format: "file",
 
     },
-    // base:"/output",
+    base:"./",
     outDir: "../docs",
 });
